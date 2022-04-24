@@ -5,7 +5,7 @@
  - The Ubuntu release is Bionic 18.04
  - There is no record of the AMI release
 
-2- Use the `Terminal` tab to explore the available images for Ubuntu and obtain the latest OS release to use in our Packer template:
+2- Use the AWS CLI to explore the available images for Ubuntu and obtain the latest OS release to use in our Packer template:
 ```bash
 aws ec2 describe-images --owners 099720109477 \
   --filters "Name=name,Values=*minimal*hvm-ssd*focal*20*-amd64*2022*" \
@@ -19,7 +19,7 @@ aws ec2 describe-images --owners 099720109477 \
   default = "ubuntu-minimal/images/hvm-ssd/ubuntu-focal-20.04-amd64-minimal-2022*"
 ```
 
-3- In a terminal, navigate to the working directory and set up the Packer environment:
+3- Navigate to the Packer folder and set up the environment:
 
 ```bash
 packer init .
